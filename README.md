@@ -39,4 +39,4 @@
 * `git add .` 파일 모두 업로드
 * `git status`로 업로드 확인
 * `git commit -m '메세지'`작성
-* `git push origin main` giyhub 업로드
+* `git push origin main` github 업로드
