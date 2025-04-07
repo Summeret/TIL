@@ -34,3 +34,9 @@
 ### 다른 환경에서 git 이어서 작업하기
 * 새폴더 연결하기
 * `git clone 저장소 주소 붙여넣기`
+* CD 복제 폴더명적고 수정하고 파일 저장
+* `git status` 업로드 안된 파일 확인
+* `git add .` 파일 모두 업로드
+* `git status`로 업로드 확인
+* `git commit -m '메세지'`작성
+* `git push origin main` giyhub 업로드
