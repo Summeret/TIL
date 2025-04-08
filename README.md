@@ -1,4 +1,9 @@
 # TIL
+## Vs code 단축키
+* `ctrl + k` -> `ctrl + \` 위/아래 수직 화면 분할
+* `ctrl +\` 좌우 수평 화면 분할
+* `ctrl + j` 터미널 실행 / 닫기
+* `Q` or `ctrl +c` 터미널 입력안되는 에러 해결 단축키
 ## 작업폴더 설명
 * `html_basic/` : html 기초 연습파일
 * `task/` : 과제제출 폴더, 파일 모음(폴더명은 날짜별로 구성)
@@ -42,3 +47,5 @@
 * `git push origin main` github 업로드
 ### (위 이어서)다른 환경에서 git 이어서 작업하기(학원)
 * `git pull origin main` 집에서 올린 파일 내려받기
+----
+### 2025/04/08 <HTML5일차 - >
