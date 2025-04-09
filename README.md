@@ -72,7 +72,7 @@
 * ex) `<img src=”url” alt=”접근성 오픈 아카데미 유튜브채널 구독하기. 매주 월요일 콘텐츠 업데이트합니다.”>`
 ----
 ### 링크 복습
-`<a href="#">< /a>` 임시링크 (다음 페이지 제작 전일 경우)
-`<a href="#header">< /a>` 바로가기 링크, id header로 이동한다. (같은 파일 내 다른 위치 이동)
-`<a href="./basic/index.html"></a>` 상대경로링크, 현재위치에서  basic 폴더 안에 html파일로 이동한다.
-`<a href="./basic/index.html#main></a>` 상대경로링크+바로가기링크, 현재위치에서 basic 폴더로 들어가서 index.html 안에 main 위치로(특정위치) 이동한다.
+* `<a href="#">< /a>` 임시링크 (다음 페이지 제작 전일 경우)
+* `<a href="#header">< /a>` 바로가기 링크, id header로 이동한다. (같은 파일 내 다른 위치 이동)
+* `<a href="./basic/index.html"></a>` 상대경로링크, 현재위치에서  basic 폴더 안에 html파일로 이동한다.
+* `<a href="./basic/index.html#main></a>` 상대경로링크+바로가기링크, 현재위치에서 basic 폴더로 들어가서 index.html 안에 main 위치로(특정위치) 이동한다.
