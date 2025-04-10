@@ -1,4 +1,7 @@
 # TIL
+## HTML태그
+* block : h, p, blockquote, address, hr, div, a(i), video
+* inline : br, strong, em, s, del, sub,sup, q, code, span, 
 ## Vs code 단축키
 * `ctrl + k` -> `ctrl + \` 위/아래 수직 화면 분할
 * `ctrl +\` 좌/우 수평 화면 분할
@@ -57,7 +60,7 @@
 -----
 ### 2025/04/08 <HTML5일차 - >
 ----
-### 2025/04/09
+### 2025/04/09 <HTML 6일차차>
 ## a 태그가 그룹일 때 href="#" class="" 잊지말고 작성하기
 ## 이미지태그 `<img>`
 ### (i) `<img>` 태그
@@ -77,8 +80,29 @@
 * `<a href="./basic/index.html"></a>` 상대경로링크, 현재위치에서  basic 폴더 안에 html파일로 이동한다.
 * `<a href="./basic/index.html#main></a>` 상대경로링크+바로가기링크, 현재위치에서 basic 폴더로 들어가서 index.html 안에 main 위치로(특정위치) 이동한다.
 ----
-### 2025/04/10
+### 2025/04/10 <HTML 7일차 - 정의형 목록태그와 메뉴개념념>
 * `html:5 tap` html 자동완성 작성
    -> 자동완성은 head와 body가 들여쓰기 X
 * `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
    : 사용자가 보는 화면의 너비가 디바이스의 너비의 1.0비율로 맞춰지게 하겠다
+## 정의형 목록태그
+### 정의형 목록 기본 작성법
+* 정의형 목록은 dl,dt,dd 3가지 태그로 이루어져 있다
+* dl은 정의형 제목과 내용을 묶는 그룹 -> class 속성을 가진다
+* dt는 dl 안 자식으로 배치, 제목을 의미
+* dt는 dd 기준 항상 먼저 시작
+* dd는 dl 안 자식으로 배치되며 dt의 다음 형제 요소로 배치되거나 기존 dd의 형제로도 배치될 수 있다
+* 레벨이 없이 사용, 보통 2~3, 대제목 자리에는 사용 불가
+* p 여러개 자리에 dt-dd-dd로 대체 가능
+* h 처럼 제목이 독립적이지 않아서 dt, dd는 항상 같이 작성 (dt dt dd X)
+### 메뉴 태그
+* gnb(global navigation bar)
+: 사이트 최상단 내비게이션 , 어떤 페이지에 들어가도 고정되어있는 주 메뉴
+* lnb(local navigation bar)
+: gnb의 하단에 배치된 서브 메뉴, 중분류 메뉴 -> gnb 하위메뉴
+* snb(side navigation bar)
+: 페이지 내에 좌/우측에 일반적으로 존재하는 추가 메뉴, 서브메뉴X -> 사이드메뉴
+* fnb(footer navigation bar)
+: 사이트 최하단 내비게이션, footer영역에 존재하는 회사소개, 저작권 등의 보조메뉴 
+* BreadCrumbs(브레드크럼)
+: 서브페이지에 표시된 현재 페이지 경로(헨젤과 그레텔의 집을 찾아가기 위해 길에 빵부스러기를 버린 예시)
