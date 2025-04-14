@@ -1,0 +1,5 @@
+body {background-color:skyblue;} /* 문서자체는 html, 링크로 css파일을 연결했기 때문에 디자인이 보이는것 */
+.title h1 {background-color:rgba(0,0,0,0.2);}
+.title #name {color:hotpink;}
+.title h2 {color:red;}
+.title .cls {color:orange;}
