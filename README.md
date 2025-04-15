@@ -193,7 +193,7 @@
 * `letter-spacing` 자간 | 0 | `letter-spacing:-0.02rem;`
 * `line-height` 행간 | 1 (100%) | `line-height:1.5;`
 * `font-size` 글자 크기 | 16px (1em) | `font-size:1.25rem;`
-* `color` 글자색상 | `color:#111; color:rgba(0,0,0,0.5)`;
+* `color` 글자색상 | `color:#111; color:rgba(0,0,0,0.5);`
 * `background-color` 배경색상 | `background-color:#000;`
 * `width` 가로 크기 | `width:200px`;
 * `height`세로 크기 | `height:200px;`
