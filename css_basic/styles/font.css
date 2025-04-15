@@ -1,0 +1,63 @@
+h1 {
+    background-color:yellow;
+    font-family:'궁서체2','바탕체2',serif;
+    /* 글꼴명이 한글 또는 공백이 포함되어 있을 경우 따옴표로 묶어서 작성 */
+}
+h2 {
+    background-color:azure;
+    font-family:'고딕','맑은 고딕','돋움', 'san-serif';
+    font-weight:500;
+}
+h3 {
+    background-color:blueviolet;
+    font-family:'Noto Sans KR', 'san-serif';
+}
+h4 {
+    background-color:rgba(0,255,0,0.5);
+    font-family:'Nanum Myeongjo', serif;
+}
+h5 {
+    background-color:rgba(255,0,0,0.3);
+    font-family: "Nanum Gothic Coding", monospace;
+}
+p {
+    background-color:antiquewhite;
+    font-family: 'pretendard', 'san-serif';
+    font-weight:600;
+    /* 글꼴 굵기 설정값 400(기본값) 100단위로 크고작아지면서 조절  */
+}
+.size_wrap {
+    background-color:rgba(0,0,0,0.1);
+    font-size:1.25rem;
+}/* px을 rem단위로 변경해서 사용(em은 사용X) */
+.size_wrap dt {}
+.size_wrap dd {font-size:1rem;}
+.size_wrap .content {
+    font-family: 'pretendard', 'san-serif';
+    font-weight:600;
+    font-size:0.875rem;
+    line-height:1.7;
+}
+.details {
+    background-color:#fff;
+    color:#333;
+    font-size:1.25rem;
+    line-height:1.5;
+    font-family: 'Noto Sans KR','san-serif';
+    font-weight:500;
+    letter-spacing:-0.02em; /* figma -2% */
+}
+.details code {
+    background-color:yellow;
+    color:blue;
+}
+.box {
+    background-color:#000;
+    color:#fff;
+    width:200px; height:200px; /* box배경 */
+    text-align:center; /* 수평정렬 */
+    /* text-align 속성은 속성값을 입력한 대상 기준으로 그 자식 또는 자손이 인라인 요소일 경우만 적용된다. (단순 글자도 인라인으로 인식함.) */
+    line-height:200px;
+    /* line-height을 이용한 수직정렬 주의사항 */
+    /* 요소의 height값이 px로 작성된 경우(조건) 그 값을 그대로 line-height의 px값으로 작성하여 수직 가운데 정렬을 적용한다. 단, 글자가 2줄 이상일 경우 사용해서는 안되며 (주의)1줄일때만 사용해야 한다. */
+}

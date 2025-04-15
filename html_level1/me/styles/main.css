@@ -1,9 +1,58 @@
-#mobile_wrap {background-color:#DF988B;}
-#mobile_wrap .photo {}
+#mobile_wrap {
+    background-color:#DF988B;/* #mobile_wrap */
+    width:440px; height:956px;/* #mobile_wrap */
+    text-align:center; /* 자식,자손 정렬 */
+    font-family: 'pretendard','san-serif';/* 자식,자손 글꼴 통일 */
+}
+#mobile_wrap .photo {
+    margin-top:138px;
+    margin-bottom:36px;
+    display:inline-block;
+}
 #mobile_wrap .photo img {}
-#mobile_wrap h1 {}
-#mobile_wrap h1 span {}
-#mobile_wrap h2 {}
-#mobile_wrap .git {}
+#mobile_wrap h1 {
+    /* 글꼴 부모 상속 상태 */
+    color:#111;
+    font-size:1.875rem;
+    font-weight:400;
+    letter-spacing:-0.02em;
+    line-height:1;
+    margin-bottom:39px;
+}
+#mobile_wrap h1 span {
+    /* 글꼴, 크기, 행간, 자간, 상속 */
+    color:#fff;
+    font-weight:700;
+}
+#mobile_wrap h2 {
+    line-height:1.7;
+    font-size:1rem;
+    font-weight: 600;
+    letter-spacing:-0.02em;
+    width:213px; /* block은 text-align 적용x */
+    margin-left:auto;
+    margin-right:auto;/* 블록을 가운데 정렬 */
+    /* display:inline-block; -> 적용하면 블록이 가운데로 정렬 되지만 인라인요소들이 옆으로 배치가 됨 */
+    text-align:left;
+}
+#mobile_wrap .git {
+    line-height:1.7;
+    font-size:1rem;
+    font-weight: 600;
+    letter-spacing:-0.02em;
+    width:213px;
+    margin-left:auto;    /* 블록은 */
+    margin-right:auto;   /* 가운데 정렬 */
+    text-align:left;     /* 글자는 왼쪽 정렬 */
+}
 #mobile_wrap .skill_list {}
-#mobile_wrap .skill_list li {}
+#mobile_wrap .skill_list li {
+    line-height:1.7;
+    font-size:1rem;
+    font-weight: 600;
+    letter-spacing:-0.02em;
+    width:213px; 
+    margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+}
