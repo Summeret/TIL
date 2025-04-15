@@ -175,3 +175,29 @@
 ### a태그 선택속성 title
 * a태그에 마우스를 올리면 나오는 말풍선같은거
 ----
+## 정리
+## CSS style sheet
+* 외부스타일시트 파일 저장 **styles**폴더에 `파일명.css`저장한다.
+* 위 파일 생성 후 css연결을 원하는 html파일 head 위치에 `<link>`태그로 연결한다.
+* html 작성 후 html의 모든 디자인 형태를 초기화하는 `reset.css` 반드시 연결.
+* 웹글꼴(noto sans kr,pretendard 등) 연결 시 html파일에 `<link>`태그연결
+### head태그 내에 들어가는 link태그 작성순서
+1. 웹글꼴 포함 기타 플러그인 연결 주소
+2. reset.css
+3. 해당 html별 디자인 css 파일
+### 디자인 css작성 시 작성 순서 및 주의사항
+* **부모->자식**순서로 가장 바깥쪽 부모부터 먼저 선택자를 만들고 디자인한다.
+* 레이아웃 관련 요소에 `width, hright` 속성 작성 시 영역 확인을 위한 `background-color`를 꼭 함께 작성해서 정확히 구분한다. 이 때 색상은 쉬운 영역 구분을 위한 `aqua, lime, yellow, pink`등의 밝은 색상 위주로 사용한다. 영역 확인과 디자인 작업을 모두 마친 후 위 색상은 제거로 마무리한다.
+* 실제 디자인에 들어가는 색상은 **rgba 또는 헥사코드**로 입력하고 테스트용 색상은 영문명으로 입력한다.
+### 자주 이용하는 css 속성 값과 기본값
+* `letter-spacing` 자간 | 0 | `letter-spacing:-0.02rem;`
+* `line-height` 행간 | 1 (100%) | `line-height:1.5;`
+* `font-size` 글자 크기 | 16px (1em) | `font-size:1.25rem;`
+* `color` 글자색상 | `color:#111; color:rgba(0,0,0,0.5)`;
+* `background-color` 배경색상 | `background-color:#000;`
+* `width` 가로 크기 | `width:200px`;
+* `height`세로 크기 | `height:200px;`
+* `margin` 바깥쪽 여백 | `margin-top:50px;`
+* `border-radius` 모서리 둥글기 | `border:50px;`
+* `font-weight` 글자 굵기 | 400 | `font-wieight:500;`
+* `font-family` 글자 설정 | `font-family:대표글꼴, 보조글꼴, san-serif;`
