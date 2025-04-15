@@ -2,7 +2,7 @@
 #weather h1 {}
 #weather .area {color:#191970;}
 #weather .temperature {color:#191970;}
-#weather >p {color:#191970;}
+#weather p {color:#191970;}
 #weather .sub_title {color:#333; background-color:#4682b4;}
 #weather .humidity {}
 #weather .dust {}
@@ -14,4 +14,4 @@
 #news .box a h2 {color:#111;}
 #news .box a p {color:#111;}
 #news >p {color:#777; background-color:#eee;}
-#news >p span{color:#777;}
+#news >p span {color:#777;}
