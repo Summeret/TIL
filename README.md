@@ -297,9 +297,9 @@
 * `<label for=”target”></label>`
 * `<input type=”radio” name=”” value=”” id=”target>` → id랑만 연결, 단 하나의 요소, value랑 같은 이름 사용가능
 ### (i) button
-**`<button type=”button”>기본</button>` 범용기능, 전송 취소 웹앱의 버튼 기능… 모두**
-**`<button type=”submit”>제출</button>` 전송 action 으로, 서버로 전송**
-**`<button type=”reset”>초기화</button>` 삭제,취소,초기화**
+* **`<button type=”button”>기본</button>` 범용기능, 전송 취소 웹앱의 버튼 기능… 모두**
+* **`<button type=”submit”>제출</button>` 전송 action 으로, 서버로 전송**
+* **`<button type=”reset”>초기화</button>` 삭제,취소,초기화**
 * → 대부분 button으로 만들고 자바스크립트로 동적 처리
 **주의**
 ### button과 a
