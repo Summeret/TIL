@@ -201,3 +201,107 @@
 * `border-radius` 모서리 둥글기 | `border:50px;`
 * `font-weight` 글자 굵기 | 400 | `font-wieight:500;`
 * `font-family` 글자 설정 | `font-family:대표글꼴, 보조글꼴, san-serif;`
+----
+### 2025/04/16 <css day-3>
+## html5 시멘틱태그
+* 의미있는 태그의 모음
+1. `<header></header>`
+* 로고 및 내비게이션을 묶어주는 웹 가이트 레이아웃 태그
+* 제목, 로고, 검색 폼, 작성자 이름 등의 요소도 포함
+2. `<nav></nav>`
+* 로고 및 웹사이트 주요 내비게이션(gnb)을 묶어주는 웹사이트 레이아웃 태그
+* 다른 페이지로서의 링크를 보여주는 구획.
+* 주로 메뉴, 목차, 색인에 쓰인다.
+* gnb를 묶는 태그 ul (nav의 자식 ul)
+* footer에는 사용 x
+3. `<section></section>`
+* 문서의 독립적인 구획을 나타내며 제목을 포함하는 경우가 많다.
+* section 밑에 자식으로 h (필수는 아니지만 경고가 생김)
+* 여러개일 경우 class 이름주기
+4. `<aside></aside>`
+* 문서의 주요 내용과 간접적으로만 연관된 부분
+* 주로 사이드바 혹은 콜아웃 박스로 표현
+* 비교적으로 좁은 부분은 aside일 가능성이 높다.
+5. `<article></article>`
+* 사이트 안에서 독립적으로 구분해 배포하거나 재사용할 수 있는 구획
+* 공유 가능한 게시판과 블로그 글, 메거진이나 뉴스 기사 등등
+6. `<footer></footer>`
+* 웹페이지 가장 하단에 위치
+* 구획의 작성자, 저작권 정보, 관련 문서 등의 내용을 담는다.
+7. `<main></main>`
+* 문서 <body>의 주요 컨텐츠 (header 밑에서부터 footer 전까지)
+* 주요 콘텐츠 영역은 문서의 핵심 주제나 앱의 핵심 기능에 직접적으로 연결됐거나 확장하는 콘텐츠로 이루어짐
+## 입력 및 선택 컨트롤 양식
+### (b) form 폼
+* 사용자로부터 입력 받을 수 있는 폼을 정의하는 요소
+* 입력하거나 선택하는 것을 묶어주는 틀
+* 사람마다 선택하는 것이 다 다르게 컨트롤 할 수 있다면 폼 (선택했을 때 다 같은 행동은 한다 -> link)
+* action : 폼 데이터를 제출할 서버 스크립트 지정 -> 서버에서 확인하는 작업
+* method : 폼 데이터를 제출하는 방법
+ * POST : 폼 데이터를 HTTP 본문에 포함하여 서버로 전송.(보안높음) -> 로그인, 회원가입, 설문조사, 보안이 중요한 정보
+ * GET : 폼 데이터를 URL에 추가하여 서버로 전송.(보안낮음) -> 검색결과, 보안이 중요하지 않은 정보
+### (b) fieldset
+* 양식의 일부를 그룹화하는 태그. legned 그룹 제목 포함
+* 폼의 양식을 더 읽기 쉽고 이해하디 편하게 구성하는데 주 목적
+* (i) legend -> fieldset에는  class or id를 쓰지 않고 legend를 작성
+* 디자인에서는 숨김처리 하기 때문에 `reset.css` 파일에 작성한다
+* 숨겨지는 태그이기 때문에 블록과 형제로 써도 상관 X
+### (i) input type="" 입력 필드 속성
+* `input type="text"`
+* `input type="password"`-> 보안
+* `input type="number"`
+* `input type="email"`
+* `input type="search"`
+* `input type="date"`
+* `input type="time"`
+* `input type="url"`
+* type = input 요소가 나타낼 입력 필드의 종류를 정함
+* name = input 요소의 이름을 지정 (데이터 구분)
+* value = ibput 요소의 초기값을 지정 -> 필수X  ex) 쇼핑몰 수량 1
+### input 속성
+* maxlenght : 크기 size와 글자 수 제한 설정 
+* required : 필수 입력 필드 지정
+* readonly : 읽기전용 -> 선택 X, 컨트롤에 따라 변경되는 것 
+* disabled : 필드 비활성화
+* `<input type="text" size="" manlenght="">`
+* `<input type="text" required>` -> 속성과 값이 동일할 경우 하나만 작성 (video태그에서 autoplay, mute...)
+* `<input type="text" readonly>`
+* `<input type="text" disabled>`
+* autocomplete : 자동완성기능 -> 검색, 아이디, 이메일...
+* accrpt : 요소에서 허용하는 파일 형식 지정
+* multiple : 입력 필드에 여러 이름 입력 시 각 개별 값 처리
+* `<input type="text" autocomplete="on">` -> on, off, new-password, email, trl, url
+* `<input type="text" accept="image/png">` -> application/pdf , * (* : 모든파일)
+* `<input type="text" multiple>`
+* `<input type="file">` -> 파일 선택
+### textarea 여러줄의 텍스트를 입력할 수 있는 입력필드
+* name = 요소 이름 지정
+* value = 요소 초기값 지정
+* rows = 요소의 세로 크기
+* cols = 요소의 가로 크기
+* disabled = 요소 비활성화
+* placeholder = 요소 입력 텍스트 지정 -> 입력 안했으르 때 보이는 안내문
+* required = 필수 입력 처리
+* form = 요소가 속한 폼 지정
+### (i) input type=”” 선택 필드 속성
+* input type=”radio” 하나만 선택
+* input type=”checkbox” 두개 이상 선택
+* select
+* type = 요소가 나타낼 타입 지정
+* name = 요소의 이름 (같은 선택에 포함 될 경우 동일한 이름 처리) → 동일한 이름으로 처리하는 그룹
+* value = 요소의 가진 고유의 초기값 지정→ 고유 정보로 데이터를 구분하는 전송값, 선택 양식을 구분하는 데이터값
+* ex) 남 `<input type="radio" name="gender" value="male">`
+* ex) 여 `<input type="radio" name="gender" value="female">`
+### (i) Label
+* input 입력,선택 필드의 접근성을 높이는 Label for=”” 
+* `<label for=”target”></label>`
+* `<input type=”radio” name=”” value=”” id=”target>` → id랑만 연결, 단 하나의 요소, value랑 같은 이름 사용가능
+### (i) button
+**`<button type=”button”>기본</button>` 범용기능, 전송 취소 웹앱의 버튼 기능… 모두**
+**`<button type=”submit”>제출</button>` 전송 action 으로, 서버로 전송**
+**`<button type=”reset”>초기화</button>` 삭제,취소,초기화**
+* → 대부분 button으로 만들고 자바스크립트로 동적 처리
+**주의**
+### button과 a
+* a → 선택했을 때 한 가지 링크로 연결, 다 같이 한곳으로 이동
+* button → 선택했을 때 분기가 나누어짐, 사용자에 다라 다른 동작을 수행
