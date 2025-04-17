@@ -1,0 +1,49 @@
+/* index.css */
+#wrap {
+    background-color:#161179;
+    width:440px; height:956px;
+    text-align:center;
+}
+#wrap h1 {
+    padding-top:325px; /* margin-top이 바깥으로 인식해서 배경이 밀릴때는 padding-top으로 작성 */
+    margin-bottom:79px;
+}
+#wrap h1 img {}
+#wrap .btn_wrap {
+    width:300px;
+    /* 블록의 너비값을 부모보다 적게 설정했을 때 블록을 가운데 정렬하고 싶다면? */
+    margin-left:auto;
+    margin-right:auto;
+    text-align:left; /* btn_wrap의 인라인 자식,자손 왼쪽정렬 */
+}
+/* 동일된 태그에 한번에 값을 줄 때 공통 태그 선택자를 하나더 생성해서 값을 적어준다. */
+#wrap .btn_wrap a {
+    display:block; /* 블록의 너비는 부모 너비의 100%와 같다. */
+    text-align:center; /* 글자보다 넓은 너비를 가진 a의 자식글자를 가운데 정렬 */
+} 
+#wrap .btn_wrap .login_btn {
+    height:40px;
+    line-height:40px; /* height 값과 동일하게 px로 작성 -> 수직정렬 */
+    background-color:#fff;
+    color:#161179;
+    font-weight:600;
+    font-size:0.875rem;
+    border-radius:15px;
+    /* 테두리 -> border :선두께 선모양 선색상; */
+}
+#wrap .btn_wrap .sign_up_btn {
+    margin-top:16px;
+    margin-bottom:11px;
+    height:40px;
+    line-height:40px;
+    background-color:#fff;
+    color:#161179;
+    font-weight:600;
+    font-size:0.875rem;
+    border-radius:15px;
+}
+#wrap .btn_wrap .pw_search {
+    color:#fff;
+    font-size:0.75rem;
+    display:inline;
+}

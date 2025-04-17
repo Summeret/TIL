@@ -157,7 +157,7 @@
 * text-align 속성은 속성값을 입력한 대상 기준으로 그 자식 또는 자손이 `인라인` 요소일 경우만 적용된다. 
 * 단순 글자도 인라인으로 인식함.
 * block은 적용 X
-### letter=spacing / word-spacing
+### letter-spacing / word-spacing
 * letter-spacing:-0.02em;
 * `figma -2% -> css -0.02em`
 ### width:; height:; 가로세로
@@ -305,3 +305,12 @@
 ### button과 a
 * a → 선택했을 때 한 가지 링크로 연결, 다 같이 한곳으로 이동
 * button → 선택했을 때 분기가 나누어짐, 사용자에 다라 다른 동작을 수행
+----
+### 2025/04/17 <css day-4 / html>
+### 블록의 너비값을 부모보다 적게 설정했을 때 블록을 가운데 정렬하고 싶다면?
+`margin-left:auto;`
+`margin-right:auto;`
+### font -> (r)em
+* 12px -> 0.75rem
+* 14px -> 0.875rem
+* 16px
