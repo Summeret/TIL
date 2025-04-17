@@ -49,12 +49,18 @@
 #wrap #login_frm p {}
 #wrap #login_frm p #login_btn {
     color:#FFE6A9;
+    width:440px; height:44px;
 }
-#wrap #login_frm p .google_login {}
+#wrap #login_frm p .google_login {
+    color:#FFE6A9;
+    width:440px; height:44px;
+}
 #wrap #login_frm+p {
     background-color:salmon;
     font-size:0.75rem;
     margin-top:129px; margin-bottom:77px;
     width:213px; height:12px;
 }/* wrap의 login_frm의 형제 p */
-#wrap #login_frm+p a {} 
+#wrap #login_frm+p a {
+
+} 
