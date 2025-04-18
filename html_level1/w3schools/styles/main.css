@@ -1,66 +1,77 @@
 /* main.css */
 #wrap {
-    background-color:aqua; /* #fff 변경 */
     width:440px; height:956px;
-    text-align:left;
-    padding-left:15px; padding-right:15px;
-
+    padding-left:15px;
+    padding-right:15px;
 }
 #wrap h1 {
-    padding-top:171px; margin-bottom:32px;
-    font-weight: 800; font-size:2.5rem;
-    color:#FFE6A9;
-    letter-spacing:-0.02em;
+    padding-top:171px; margin-bottom:20px;
+    font-weight: 800; /* extrabold */
+    font-size:2.5rem; /* 40px */
+    color:#161179;
 }
 #wrap > p {} /* wrap의 모든 자식 */
 #wrap h1+p {
-    background-color:yellow;
+    margin-bottom:95px;
     font-size:0.938rem;
-    letter-spacing:-0.02em;
 } /* wrap의 h1의 형제 p */
-#wrap #login_frm {
-    background-color:springgreen;
-}
+#wrap #login_frm {}
 #wrap #login_frm h2 {
-    margin-bottom:10px;
-    color:#161179;
     font-size:1.375rem;
     font-weight:600;
+    color:#161179;
+    margin-bottom:10px;
 } 
-#wrap #login_frm >h2 {
-    margin-top:94px; 
-}
-#wrap #login_frm p {
-    background-color:#fff;
-    border:1px solid #000;
-    border-radius:15px;
-    height:44px;
+#wrap #login_frm p {}
+#wrap #login_frm p.user_in {margin-bottom:52px;} 
+/* 1. 속성을 주고 싶은 태그한테 이름주기 (1번 이용) -> 선택자 추가
+   2. 한꺼번에 처리하고 나중에 다른 태그에 속성을 덮어쓰기 */
+#wrap #login_frm p.user_btn {margin-bottom:10px;}
+#wrap #login_frm p input::placeholder { /* placeholder 속성 선택자 작성법 */
+    font-size: 0.875rem;
+    font-weight: 300;
+    color:#747474;
 }
 #wrap #login_frm p input {
-    font-size:0.875rem;
-    padding-left:15px; padding-top:15px; padding-bottom:15px;
+    width:410px;
+    padding-left:20px; 
+    padding-right:20px; 
+    padding-top:15px; 
+    padding-bottom:15px;
+    border:1px solid #000;
+    border-radius:10px;
 }
-#wrap #login_frm p+h2 {
-    margin-top:52px; 
-}
-#wrap #login_frm p {}
-#wrap #login_frm p input {}
-#wrap #login_frm p+h2 {}
-#wrap #login_frm p {}
-#wrap #login_frm p #login_btn {
+#wrap #login_frm p #login_btn {/* 버튼은 인라인이지만 블록의 성질로 나왔기 때문에 -> 버튼의 기본정렬 center, 가로 값 지정가능 */
     color:#FFE6A9;
-    width:440px; height:44px;
+    width:410px;
+    padding-left: 20px;
+    padding-right:20px;
+    padding-top: 15px;
+    padding-bottom:15px;
+    background-color: #161179;
+    border-radius:10px;
+    font-size:0.875rem;
+    font-weight:600;
 }
 #wrap #login_frm p .google_login {
     color:#FFE6A9;
-    width:440px; height:44px;
+    width:410px;
+    padding-left: 20px;
+    padding-right:20px;
+    padding-top: 15px;
+    padding-bottom:15px;
+    background-color: #161179;
+    border-radius:10px;
+    font-size:0.875rem;
+    font-weight:600;
+    display: block; /* 인라인 -> 블록 */
+    text-align:center; /* a는 인라인이라 기본정렬이 왼쪽 -> 정렬을 센터로 설정 */
 }
 #wrap #login_frm+p {
-    background-color:salmon;
     font-size:0.75rem;
-    margin-top:129px; margin-bottom:77px;
-    width:213px; height:12px;
+    font-weight:300; /* px 붙이지말기 */
+    letter-spacing: 0;
+    text-align: center;
+    margin-top:129px; 
 }/* wrap의 login_frm의 형제 p */
-#wrap #login_frm+p a {
-
-} 
+#wrap #login_frm+p a {font-weight:600;} 
