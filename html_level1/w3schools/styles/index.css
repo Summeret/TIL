@@ -5,15 +5,18 @@
     text-align:center;
 }
 #wrap h1 {
-    padding-top:325px; /* margin-top이 바깥으로 인식해서 배경이 밀릴때는 padding-top으로 작성 */
-    margin-bottom:79px;
+    padding:325px 0 0;
+    /* padding-top:325px; margin-top이 바깥으로 인식해서 배경이 밀릴때는 padding-top으로 작성 */
+    /* margin-bottom:79px; */
+    margin:0 0 0 79px;
 }
 #wrap h1 img {}
 #wrap .btn_wrap {
     width:300px;
     /* 블록의 너비값을 부모보다 적게 설정했을 때 블록을 가운데 정렬하고 싶다면? */
-    margin-left:auto;
-    margin-right:auto;
+    /*margin-left:auto;
+    margin-right:auto; */
+    margin:0 auto;
     text-align:left; /* btn_wrap의 인라인 자식,자손 왼쪽정렬 */
 }
 /* 동일된 태그에 한번에 값을 줄 때 공통 태그 선택자를 하나더 생성해서 값을 적어준다. */
@@ -32,8 +35,9 @@
     /* 테두리 -> border :선두께 선모양 선색상; */
 }
 #wrap .btn_wrap .sign_up_btn {
-    margin-top:16px;
-    margin-bottom:11px;
+    /* margin-top:16px;
+    margin-bottom:11px; */
+    margin:16 0 11 0;
     height:40px;
     line-height:40px;
     background-color:#fff;

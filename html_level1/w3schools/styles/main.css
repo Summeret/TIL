@@ -1,18 +1,21 @@
 /* main.css */
 #wrap {
     width:440px; height:956px;
-    padding-left:15px;
-    padding-right:15px;
+    /* padding-left:15px;
+    padding-right:15px; */
+    padding:0 15px;;
 }
 #wrap h1 {
-    padding-top:171px; margin-bottom:20px;
+    /* padding-top:171px; margin-bottom:20px; */
+    padding:171px 0 20px;
     font-weight: 800; /* extrabold */
     font-size:2.5rem; /* 40px */
     color:#161179;
 }
 #wrap > p {} /* wrap의 모든 자식 */
 #wrap h1+p {
-    margin-bottom:95px;
+    /* margin-bottom:95px; */
+    margin:0 0 95px;
     font-size:0.938rem;
 } /* wrap의 h1의 형제 p */
 #wrap #login_frm {}
@@ -20,13 +23,14 @@
     font-size:1.375rem;
     font-weight:600;
     color:#161179;
-    margin-bottom:10px;
+    /* margin-bottom:10px; */
+    margin:0 0 10px;
 } 
 #wrap #login_frm p {}
-#wrap #login_frm p.user_in {margin-bottom:52px;} 
+#wrap #login_frm p.user_in {/* margin-bottom:52px; */ margin:0 0 52px;} 
 /* 1. 속성을 주고 싶은 태그한테 이름주기 (1번 이용) -> 선택자 추가
    2. 한꺼번에 처리하고 나중에 다른 태그에 속성을 덮어쓰기 */
-#wrap #login_frm p.user_btn {margin-bottom:10px;}
+#wrap #login_frm p.user_btn {/* margin-bottom:10px; */ margin:0 0 10px;}
 #wrap #login_frm p input::placeholder { /* placeholder 속성 선택자 작성법 */
     font-size: 0.875rem;
     font-weight: 300;
@@ -34,20 +38,22 @@
 }
 #wrap #login_frm p input {
     width:410px;
-    padding-left:20px; 
+    /* padding-left:20px; 
     padding-right:20px; 
     padding-top:15px; 
-    padding-bottom:15px;
+    padding-bottom:15px; */
+    padding:15px 20px;
     border:1px solid #000;
     border-radius:10px;
 }
 #wrap #login_frm p #login_btn {/* 버튼은 인라인이지만 블록의 성질로 나왔기 때문에 -> 버튼의 기본정렬 center, 가로 값 지정가능 */
     color:#FFE6A9;
     width:410px;
-    padding-left: 20px;
+    /* padding-left: 20px;
     padding-right:20px;
     padding-top: 15px;
-    padding-bottom:15px;
+    padding-bottom:15px; */
+    padding:15px 20px;
     background-color: #161179;
     border-radius:10px;
     font-size:0.875rem;
@@ -56,10 +62,11 @@
 #wrap #login_frm p .google_login {
     color:#FFE6A9;
     width:410px;
-    padding-left: 20px;
+    /* padding-left: 20px;
     padding-right:20px;
     padding-top: 15px;
-    padding-bottom:15px;
+    padding-bottom:15px; */
+    padding:15px 20px;
     background-color: #161179;
     border-radius:10px;
     font-size:0.875rem;
@@ -72,6 +79,7 @@
     font-weight:300; /* px 붙이지말기 */
     letter-spacing: 0;
     text-align: center;
-    margin-top:129px; 
+    /* margin-top:129px;  */
+    margin:129px 0 0;
 }/* wrap의 login_frm의 형제 p */
 #wrap #login_frm+p a {font-weight:600;} 
