@@ -311,6 +311,9 @@
 `margin-left:auto;`
 `margin-right:auto;`
 ### font -> (r)em
-* 12px -> 0.75rem
-* 14px -> 0.875rem
-* 15px -> 0.938rem
+* 12px = 0.75rem
+* 13px = 0.813rem
+* 14px = 0.875rem
+* 15px = 0.938rem
+* 16px = 1rem
+* 18px = 1.125rem
