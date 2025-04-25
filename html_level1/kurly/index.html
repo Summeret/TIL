@@ -21,35 +21,37 @@
             <p>②"이용자"란 "몰"에 접속하여 이 약관에 따라 "몰"이 제공하는 서비스를 받는 회원 및 비회원을 말합니다.</p>
         </div>
         <form action="#" method="post" id="login_frm">
-            <dl class="member._info">
+            <dl class="member_info">
                 <dt>아이디<em>*</em></dt>
                 <dd><input type="text" name="user_id" placeholder="아이디를 입력해주세요"></dd>
-                <dd><button type="button" id="id_overiap_btn">중복확인</button></dd>
+                <dd><button type="button" id="id_overlap_btn" class="btn">중복확인</button></dd>
                 <dt>비밀번호<em>*</em></dt>
                 <dd><input type="password" name="user_pw" placeholder="비밀번호를 입력해주세요"></dd>
-                <dd></dd>
+                <dd></dd> <!-- value라고 적으면 password의 특징을 그대로 받아들여 보여주기 때문에 ****으로 표시된다. -->
                 <dt>비밀번호확인<em>*</em></dt>
-                <dd><input type="password" name="user_pw_check" placeholder="비밀번호를 한번 더 입력해주세요"></dd>
+                <dd><input type="password" name="user_pw_re" placeholder="비밀번호를 한번 더 입력해주세요"></dd>
                 <dd></dd>
                 <dt>이름<em>*</em></dt>
                 <dd><input type="text" name="user_name" placeholder="이름을 입력해주세요"></dd>
                 <dd></dd>
                 <dt>이메일<em>*</em></dt>
                 <dd><input type="email" name="user_email" placeholder="예)abc@web.com"></dd>
-                <dd><button type="button" id="email_overlap_btn">중복확인</button></dd>
+                <dd><button type="button" id="email_overlap_btn" class="btn">중복확인</button></dd>
                 <dt>휴대폰<em>*</em></dt>
                 <dd>
-                    <select name="uesr_">
-                        <option value="">KT</option>
-                        <option value="">LG</option>
-                        <option value="">SKT</option>
-                    </select>
-                    <input type="text" name="user_tel_num" placeholder="숫자만 입력해주세요 예)01012345678">
+                    <select name="news_agency">
+                        <option>통신사</option>
+                        <option value="kt">KT</option>
+                        <option value="skt">SKT</option>
+                        <option value="lgu">LGU+</option>
+                        <option value="mvno">알뜰폰</option>
+                    </select> <!-- 선택양식 or 목록양식 -->
+                    <input type="number" name="user_phone_num" placeholder="숫자만 입력해주세요 예)01012345678">
                 </dd>
-                <dd><button type="button" id="certification_btn">인증번호받기</button></dd>
+                <dd><button type="button" id="authentication_btn" class="btn">인증번호받기</button></dd>
                 <dt>주소<em>*</em></dt>
                 <dd>
-                    <button type="button" id="sreach_btn">주소검색</button>
+                    <button type="button" id="addrees_sreach_btn">주소검색</button>
                     <span>배송지에 따라 상품 정보가 달라질 수 있습니다.</span>
                 </dd>
                 <dd></dd>
@@ -57,19 +59,20 @@
                 <dd>
                     <input type="radio" name="gender" value="male" id="male"><label for="male">남</label>
                     <input type="radio" name="gender" value="female" id="female"><label for="female">여</label>
-                    <input type="radio" name="gender" value="none" id="none"><label for="none">선택안함</label>
+                    <input type="radio" name="gender" value="gender_none" id="gender_none"><label for="gender_none">선택안함</label>
+                    <!-- value-id-for : 값이 같을 뿐 생략하면 X -->
                 </dd>
                 <dd></dd>
                 <dt>생년월일</dt>
                 <dd>
-                    <input type="text" mame="user_year" placeholder="YYYY">
-                    <input type="text" mame="user_month" placeholder="MM">
-                    <input type="text" mame="user_day" placeholder="DD">
+                    <input type="number" name="birthday_year" placeholder="YYYY">
+                    <input type="number" name="birthday_month" placeholder="MM">
+                    <input type="number" name="birthday_day" placeholder="DD">
                 </dd>
                 <dd></dd>
             </dl>
             <div class="btn">
-                <button type="submit" id="join_btn">가입하기</button>
+                <button type="submit" id="sign_up_btn">가입하기</button>
             </div>
         </form>
     </main>
