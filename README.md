@@ -377,3 +377,22 @@
 * `padding:calc(100% - (10px * 3));` 우선순위 괄호 추가 사용 가능 | 10px을 *3(숫자만 들어가면 요소의 개수를 뜻함)해서 100%에서 뺀 값을 padding에 적용한다
 * `width:calc(90% - (60px + 5px));` 우선순위도 연산자 앞,뒤 공백 필수 | 60과 5가 다른 요소에 들어 있어서 풀어서 적기도 함
 * `width:calc(90% - 65px);` 
+## Flex Layout
+* 메인축 : 아이템이 정렬된 방향
+* 교차축 : 아이템이 교차된 방향
+* flex는 수평, 수직 1차원 레이아웃으로 메인축과 교차축을 고려하여 다양한 레이아웃을 만들 수 있는 CSS3의 새로운 레이아웃 속성이다.
+* container(부모속성), item(자식속성)에 주는 속성이 다르기 때문에 주의해서 작성. **기본시작은 부모**
+* `dispaly:flex` 부모(container)대상에 dispaly 명령어로 해당 레이아웃이 flex라는 선언부터 시작한다.
+* (위) flex 선언을 진행 시 메인축은 기본값 수평, 교차축은 기본값 수직으로 정렬된다.
+* (reverse -> 역순)
+* `flex-direction:row;` 수평으로 정렬
+* `flex-direction:column;` 수직으로 정렬
+* `flex-wrap:wrap;` 자동줄바꿈
+* `flex-wrap:nowrap;` 줄바꿈 X (기본값)
+* `flex-flow:row wrap;`
+* `justify-content:flex-start;` 왼쪽으로 정렬 -> row-reverse와 비슷하지만 역순이 아님
+* `justify-content:flex-end;` 오른쪽으로 정렬
+* `justify-content:center;` 가운데 정렬
+* `justify-content:space-between;` 첫째와 막내는 양쪽 끝으로 정렬, 나머지는 균등배치 (부모의 끝에 배치가 우선순위)
+* `justify-content:space-around;` 자식들을 균등하게 배치 (자식의 여백이 우선순위로)
+* **justify는 메인축 정렬** -> row / column에 따라 정렬이 달라짐.
