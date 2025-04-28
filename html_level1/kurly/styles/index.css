@@ -24,7 +24,7 @@ main #login_frm .member_info {
     overflow:hidden;
 }
 main #login_frm .member_info dt {
-    width:200px; background-color:lime;
+    width:200px;
     float:left;
     clear:both; /* 내리고 싶은 형제한테 clear:both; 적용하기 */
 }
@@ -35,14 +35,12 @@ main #login_frm .member_info dd {}
 main #login_frm .member_info dd:nth-of-type(2n+1) {
     float:left;
     width:650px;
-    background-color:yellow;
 }
 /* 중복확인, 인증번호받기를 담은 세번째 dd선택자 */
 /* main #login_frm .member_info dd:nth-of-type(even) {background-color:blue;} */
 main #login_frm .member_info dd:nth-of-type(2n) {
     float:right;
     width:150px;
-    background-color:blue;
 }
 /* -------------------------------------------------------------- */
 /* =========================== 나머지 자식, 자손 개별 선택자 */
@@ -57,21 +55,102 @@ main #login_frm .member_info dd input[name^=user] {
 }
 /* =========================== 개별속성(id)  */
 main #login_frm .member_info dd input[name$=id] {}
-/* =========================== 오른쪽 중복확인,인증번호 버튼 묶음 선택자 */
-main #login_frm .member_info dd:nth-of-type(2n) .btn {
-    background-color:red;
+/* ==================================== 오른쪽 중복확인,인증번호 버튼 묶음 선택자 */
+main #login_frm .member_info dd:nth-of-type(2n) {
+    text-align:right;
 }
-/* ============================ 휴대폰, 주소, 성별, 생년월일 선택자 */
-main #login_frm .member_info dd select[name^=news] {}
+main #login_frm .member_info dd:nth-of-type(2n) .btn {
+    background-color:#5f0089; color:#fff;
+    width:90%; height:45px; /* 글자수가 다른데 버튼의 크기가 같다면 값을 고정했다는 뜻 */
+     /* padding은 글자수에 영향을 받기 때문에 글자수가 다르다면 크기가 달라진다. */
+    border-radius:5px;
+}
+main #login_frm .member_info dd:nth-of-type(2n) .btn:hover {
+    filter:brightness(110%); /* 밝기 - 100% 기본값 */  
+}
+/* ================================== 휴대폰, 주소, 성별, 생년월일 선택자 */
+main #login_frm .member_info dd select[name^=news] {
+    width:60px;
+    border:1px solid #ccc; border-radius:4px;
+    padding:4px; font-size:0.875rem; height:50px;
+    float:left;  /* 오차가 있으면 안되니 select와 input이 가지는 기본값을 없애야함 */
+    margin-right:5px; /* 오차를 없애고 값 적용해주기 */
+    background:#fff url(../imsges/ico_down.png) no-repeat 93% center / 8px; 
+    /* background 통합버전 :image url() repeat attachment position / size */
+}
 main #login_frm .member_info dd select[name^=news] option {}
-main #login_frm .member_info dd input[name*=phone] {}
-/* =========================== 인증번호 버튼 개별 선택자 */
-main #login_frm .member_info dd #authentication_btn {background-color:chocolate;}
-main #login_frm .member_info dd #address_search_btn {}
-main #login_frm .member_info dd #address_search_btn + span {}
-main #login_frm .member_info dd input[name=gender] {}
-main #login_frm .member_info dd input[name=gender] + label {}
-main #login_frm .member_info dd input[name^=birthday] {}
+main #login_frm .member_info dd input[name*=phone] {
+    float:left; /* float는 모든형제한테 적용하기 */
+    /* 단위가 다른 값을 css에서 처리하는 방법 */
+    width:calc(90% - 65px); /* calc : 계산기를 불러오는 명령어 / (주의) 연산자 앞,뒤에 공백 필수 */
+}
+/* ================================== 인증번호 버튼 개별 선택자 */
+main #login_frm .member_info dd #authentication_btn {
+    background-color:#ccc;
+}
+/* ================================== 주소검색 */
+main #login_frm .member_info dd #address_search_btn {
+    border:2px solid #5f0089;
+    background-color:#fff;
+    width:90%;
+    padding:12px 0;
+    border-radius:4px;
+
+}
+main #login_frm .member_info dd #address_search_btn + span {
+    display:block;
+    color:#aaa;
+}
+main #login_frm .member_info .gender_g {text-align:center;} /* dd전체에 중앙정렬을 하면 기존 정렬이 깨지니까 html에 클래스 이름을 설정해서 선택자를 새로 만들기 or 수열선택자로 잡아주기 */
+main #login_frm .member_info dd input[name=gender] {display:none;} /* 자리는 유지 -> visibility:hidden; */
+main #login_frm .member_info dd input[name=gender] + label:last-child {margin:0;}
+main #login_frm .member_info dd input[name=gender] + label {
+    /* 비활성화 디자인 */
+    background-image:url(../imsges/check_state.svg);
+    background-repeat:no-repeat;
+    background-size:17px; /* contain은 inline이라서 이미지가 잘려보임 */
+    background-position:5% 35%; /* 통합버전에서 안쓰는 값은 기본값이 되므로 하나씩 따로 적어주기 */
+    padding-left:35px; margin-right:20px;
+}
+main #login_frm .member_info dd input[name=gender]:checked + label {
+    /* 활성화 디자인 -> 비활성화 디자인이 기본 / 변경되는 디자인만 적어주기 */
+    background-image:url(../imsges/check_state_on.png);
+    /* filter:invert(1); */
+}
+main #login_frm .member_info .gender_g ~ dd {text-align:center;} 
+/* gender_g + dd -> 빈공간의 dd를 인식 */
+main #login_frm .member_info dd:nth-last-of-type(2) { /* 뒤에서 n번째 dd를 선택 -> dd:nth-last-pf-type(n) */
+    background-color:#fff;
+    width:calc(650px * 0.9); /* dd자체에 크기를 줘야하기 때문에 *0.9 (90% -> dl의 90% / %는 항상 부모가 기준) */
+    border:2px solid #5f0089; border-radius:4px;
+    padding:10px 0;
+} 
+main #login_frm .member_info dd input[name^=birthday] {
+    width:60px;
+    text-align:center;
+}
+/* 유지보수가 좋게 하려면 태그를 최대한 적게쓰기 -> 의미없는 태그들은 적지않고 css로 처리 -> 실제태그를 기준으로 앞뒤에 가상의 태그 만들기 가능 */
+main #login_frm .member_info dd:nth-last-of-type(2) span::after {
+    content:'/';
+    display:inline-block;
+    font-size:14px; color:#aaa; margin:0 4px;
+}
+main #login_frm .member_info dd:nth-last-of-type(2) span:last-child::after {display:none;}
+/* before 이전형제 만들기 / after 다음형제 만들기 */
+/* 기존 자식의 첫째로 들어가는지 둘째로 들어가는지 */
+/* input은 닫기태그가 없기 때문에 화면에 보이지 않아서 태그를 새로 만들어줘야함 -> input의 특성 */
+/* 보통 a태그에 많이사용 -> 닫기태그가 존재하기 때문에 태그추가 필요 X */
 /* =========================== 가입버튼 */
-main #login_frm .btn {}
-main #login_frm .btn #sign_up_btn {}
+main #login_frm > .btn {
+    text-align:center;
+    margin:50px 0 0;
+}
+main #login_frm .btn #sign_up_btn {
+    background-color:#5f0080; color:#fff;
+    width:40%; 
+    padding:20px 0;
+    border-radius:10px;
+}
+main #login_frm .btn #sign_up_btn:hover {
+    filter:brightness(110%)
+}
