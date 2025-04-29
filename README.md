@@ -403,6 +403,7 @@
 * 교차축 2줄 이상일때 정렬방법 (flex-wrap:wrap 기준)
 * `align-content:flex-start;` 
 * `align-content:flex-end;`
+* `align-content:center;`
 * `align-content:space-between;`
 * `align-content:space-around;`
 * 교차축 1줄 이상일때 정렬방법 (flex-wrap:nowrap 기준)
