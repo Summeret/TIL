@@ -396,3 +396,18 @@
 * `justify-content:space-between;` 첫째와 막내는 양쪽 끝으로 정렬, 나머지는 균등배치 (부모의 끝에 배치가 우선순위)
 * `justify-content:space-around;` 자식들을 균등하게 배치 (자식의 여백이 우선순위로)
 * **justify는 메인축 정렬** -> row / column에 따라 정렬이 달라짐.
+----
+### 25/04/29
+## Flex
+* **align는 교차축 정렬**
+* 교차축 2줄 이상일때 정렬방법 (flex-wrap:wrap 기준)
+* `align-content:flex-start;` 
+* `align-content:flex-end;`
+* `align-content:space-between;`
+* `align-content:space-around;`
+* 교차축 1줄 이상일때 정렬방법 (flex-wrap:nowrap 기준)
+* `align-items` start,end,center
+* **item에 적용하는 속성**
+* `align-self` start,end,center (교차축 1줄이상)
+* `order` -> 음수부터 양수까지 작은수에서 큰수로 정렬이 적용된다. (중간에 비워지는 숫자 없이 값 적용하기)
+* `flex` 부모에 크기에 반응해서 비율적용 (메인축 기준)
