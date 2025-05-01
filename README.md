@@ -412,3 +412,11 @@
 * `align-self` start,end,center (교차축 1줄이상)
 * `order` -> 음수부터 양수까지 작은수에서 큰수로 정렬이 적용된다. (중간에 비워지는 숫자 없이 값 적용하기)
 * `flex` 부모에 크기에 반응해서 비율적용 (메인축 기준)
+----
+### 25/04/30
+## Position
+### 필수속성 relative, absolute, fixed, sticky
+### 선택속성 top, bottom, left, right
+* `flex, float` 등 포함 위치가 잡혀있는 요소에서 상/하/좌/우로 살짝 이동을 할 때는 `position:relative;`
+* 형제요소 또는 부모-자식 요소 관계에서 부모 원리를 기준으로 요소를 겹치거나 현재 위치와는 관계없이 멀리 이동할 경우는 `position:absolute;`
+* **주의사항** `absolute`사용 시 부모들 중 별도의 position 속성이 없다면 `body`를 기준으로 위치가 설정되니 부모 중 원하는 기준 대상에 반드시 position 속성을 함께 작성해야한다. `absolute, fixed, sticky` 모두가능!(상황에 따라 조합하기)
