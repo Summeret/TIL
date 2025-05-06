@@ -318,6 +318,116 @@
 * 16px = 1rem
 * 18px = 1.125rem
 -----
+### 25/05/18 <css day-5>
+## 요소표시속성 display
+* 블록 또는 인라인으로 표시 속성을 변경하여 외부 표시 유형을 설정
+* `display :block;`
+* `display :inline;`
+* `display :inline-block;`
+* 요소 숨기기/보이기 : `display :none or block`(요소에 따라)
+* 레이아웃 변동 없이 요소 숨기기/보이기 : `visibility :hidden or visible`
+## 요소의 크기 속성 width/height
+* px , % , vw/hw
+* width :100px → 절대값, 부모영향X
+* width :100% → 부모 기준까지
+* width :100vw → 보이는 화면 영역에 맞추기 / 화면을 켜면 바로 사용자에게 보이는 크기
+* 너비로 작성했지만 h 높이도 동일한 의미
+## padding, margin (안쪽 여백, 바깥쪽 여백)
+* padding 요소의 안쪽을 벌릴 때(부모-자식)
+* margin 다른 요소(형제)와 요소 사이에 거리를 벌릴 때
+#### 여백 읽는 순서
+* 시계 방향 top → right → bottom → left
+ * margin : 20px 30px 40px 50px; (값이 0이 아닐 때는 px붙이기)
+* 모든값이 동일 →  padding:50px;
+* padding:50px;   상하좌우의 모든 값이 동일할 때 값 1개 
+* padding: 1px 2px 3px 4px;   위,오른,아래,왼 값이 각각 다를 때 
+* padding:5px 10px;   상하.좌우 값이 2개씩 같은 경우 앞:상하 뒤:좌우 
+* padding:5px 10px 0;   상.좌우.하 값 3개 나누기 -> 좌우는 같고 상하가 다를 때 
+## border 테두리 속성 
+*  border:두께 모양 색상;
+* ex) border:1px solid red;
+* ex) border:1px dashed black;
+* ex) border:1px dotted coral;
+* ex) border-radius:10px; (%)
+## 표태그 table
+### (b) table
+* 테이블 관련 태그는 모두 block
+* 테이블의 기본 테두리 값은 0으로 css를 진행하기 전 1px 설정을 권장
+### (b) tr행, td내용 열
+* 열(td)는 항상 행(tr) 안에 존재
+* 테이블은 행, 열을 자식, 자손으로 가지는 부모로써 존재
+* 블록이지만 크기를 안주면 내용만큼만 크기를 갖는다
+### (b) th 제목 열
+* (b) thead, tbody, tfoot 행 그룹
+ * 행그룹은 행(tr)의 부모로 사용
+ * thead : 제목행그룹, th위주로 구성된 제목행(tr)을 묶을 때 사용
+ * tbody : 내용행그룹, td위주로 구성된 내용행(td)을 묶을 때 사용
+ * tfoot : 결과행그룹, th&td들로 구성된 결과값을 가지는 결과행(tr)을 묶을 때 사용
+* 속성
+ * colspan (수평열 합치기) / rowspan (수직열 합치기)
+1. 합치고 싶은 가로방향 열 2개 이상 정하기(개수제한없음)
+2. 위에서 정한 태그 확인하기
+3. 위 태그 중 먼저 시작한 태그속성으로 colspan:"합치는 칸의 개수"
+4. 합쳐지는 첫번째를 제외하고 나머지 태그는 주석으로 가리기 
+-----
+### 25/04/21 <css day-6>
+## 수열선택자
+#### :nth-child(n)
+* css에서 요소를 규칙적으로 선택하고자 할 때 사용하는 선택자
+* :nth_child(n) 형태로 작성되며, 반복패턴을 따라 자식이 2개 이상 있을 때 n번째 자식이란 개념으로 선택한다. 클래스와 아이디로 의미있는 이름을 짓기 적합한 대상이 아닌 경우 이름을 짓지 않고 css 선택이 가능해 다양한 경우에 유용하게 사용
+* ex) li:nth-child(2) {background-color:red;} → 목록 중 2번째 자식 li를 선택해서 배경색을 빨강으로 한다.
+* 첫째와 막내는 first-child / last-child 로 작성 가능
+#### :nth-of-type(n)
+* th-child(n) : 전체 형제 요소 중 n번째 대상
+* nth-of-type(n) : 전체 형제 기준 태그 종류 중 n번째 대상
+#### :nth-child(An)
+* A : 반복간격(주기)
+* :nth-child(3n) 3간격으로 형제 요소 선택하기(3의배수)
+ * 3,6,9,12,15,18,21….번째 요소 선택
+ * 목록(li)에서 많이 사용
+ #### :nth-child(An+B)
+ * A : 반복 간격 (주기)
+ * B : 시작위치
+ * :nth-child(3n+1) 1번부터 시작해서 3의배수(3개 간격으로)
+ * 1 4 7 10 13 16….
+#### :nth-child(odd) 홀수
+#### :nth-child(even) 짝수
+## 배경속성
+### background-color
+### background-image:url(경로);
+* 상대경로 작성기준 (주로 상대경로로 작성함)
+* X,Y 무한반복(기본값) → 이미지 크기에 따라 반복되는게 달라짐
+* 선택자에 색상을 넣은 상태에서 이미지는 색상 위로 배치된다.
+* 같은 이미지를 사용하려면 공통 선택자에 작성
+* 글자나 주변 다른 요소들과 겹쳐지고 밑으로 이미지가 보인다면 background-image
+* 단독으로 사용되면 <img> 태그
+* 절대경로로
+### background-repeat:반복설정;
+* repeat (기본값)
+* no-repeat : 반복안함
+* repeat-x : 옆으로만
+* repeat-y : 밑으로만
+### background-position:방향
+* x,y,순으로 작성
+* left top 기준
+* ex) 100px 20%
+### background-size
+* contain : 요소 안에 배경 이미지가 전부 나타나도록 가로 세로 크기를 조정. (가로세로는 이미지의 형태에 따라 빈 부분이 생길 수 있다. → 이미지를 자르지 않고 다 보여줌)
+* cover : 배경 이미지로 요소의 크기를 모두 덮어 씌우는 형태로 적용. (빈 부분 없이 이미지로 꽉 채움 → 이미지가 잘릴 수 있다.)
+* :300px auto; : x,y 값 순서로 %,px,auto단위 값을 적용 (auto = 자동비율) → 비율 지키기
+### background-attachment
+* background-attachment:fixed or scroll(기본값);
+* 화면 스크롤과 함께 배경 이미지가 움직인다면 = scroll(기본값)
+* 화면 스크롤 상관 없이 배경 이미지가 고정된다면 = fixed
+* **### image - repeat -position - size - attachment : 이미지 관련 속성. 같이 연관 지어서 같이 알고 있어야 함**
+### background 통합 속성 버전
+* **background: color image repeat attachment position / size**
+*  순서만 지켜서 사용하고 싶은 속성만 작성 가능
+* 부모에 속성을 적어도 통합 속성에서 적지 않으면 css 기본값으로 인식
+* 공통 css를 적용하지 않을 경우 통합 속성으로 필요한 속성만 작성
+* size는 마지막에 / 쓰고 작성하기
+
+-----
 ### 25/04/24
 ## 위치속성 float
 * 블록, 인라인 요소를 좌(left), 우(right) 사용하는 위치 속성
@@ -328,6 +438,31 @@
 * `float:right`는 2번 이상 사용하면 역순이 되므로 **한번만 작성한다!!**
 ### float를 적용하는 형제의 부모의 높이가 max-content(기본값)이라면?
 * 부모의 높이를 제대로 인식못하므로 높이를 강제(px)시키거나 `overflow:hidden`으로 높이를 안주고 영역 재인식을 시켜 float에 의한 오류를 제거해야 한다.
+## 상대선택자
+### hover
+* 사용자가 마우스를 올렸을 때 상태에 따라 스타일을 적용
+* a {color:blue;}
+* a:hover {color:red;} → 블루로 보이다가 마우스를 올리면 빨강으로 바뀐다.
+* button {background-color:orange;}
+* button:hover {background-color:red;}
+* 선택자를 복사해서 새로만들어서 예를 들어 그림자 디자인을 넣었는데 위아래 그림자가 안보이는건 부모에 overflow:hidden; 설정을 했기 때문 → overflow지우고 높이를 설정해주기
+### checked
+* 사용자가 체크박스 또는 라디오 버튼을 선택했을 때 상태에 따라 디자인을 변경,적용
+* input type=”checkbox” name=”ck” value=”ck1”
+* input type=”radio” name=”ck” value=”ck2” id=”ck2”
+* value 서버전송값  id→label과 연결
+ * label for=”ck2”>로그인 상태유지</label>
+* input[type^=check]:checked {color:pink;}
+* input[name^=ck]:checked ~label {color:red;} input이 체크되었을 때 뒤에 형제 모든 라벨에 빨강을 하겠다
+* ~ 뒤에 모든 형제   /  + 바로 다음 형제
+## 속성선택자
+* html요소 중 주로 form 관련 요소에 사용하는 선택자로 속성 (attribute)을 기준으로 스타일을 적용한다. [] 대괄호 속성명,속성값 등을 기준으로 요소를 선택한다
+* 통일된 값
+ * [속성]   속성이 존재 시 선택
+ * [속성=값]  속성과 값이 정확이 일치 시 선택
+ * [속성^=값]  속성의 값이 이 것으로 시작하는 경우 선택
+ * [속성$=값]  속성의 값이 이 것으로 끝나는 경우 → 통일된 게 없을 때는 하나만 잡겠다
+ * [속성*=값]  속성의 값이 이것을 포함하는 경우
 ----
 ### 25/04/25
 ## form 태그 관련 속성 주요 뜻과 사용 용도
