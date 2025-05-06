@@ -419,7 +419,7 @@
 * background-attachment:fixed or scroll(기본값);
 * 화면 스크롤과 함께 배경 이미지가 움직인다면 = scroll(기본값)
 * 화면 스크롤 상관 없이 배경 이미지가 고정된다면 = fixed
-* **### image - repeat -position - size - attachment : 이미지 관련 속성. 같이 연관 지어서 같이 알고 있어야 함**
+* **image - repeat -position - size - attachment : 이미지 관련 속성. 같이 연관 지어서 같이 알고 있어야 함**
 ### background 통합 속성 버전
 * **background: color image repeat attachment position / size**
 *  순서만 지켜서 사용하고 싶은 속성만 작성 가능
