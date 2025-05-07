@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradient | css</title>
+    <link rel="stylesheet" href="../css_basic/styles/reset.css">
+    <style>
+        .btn {
+            display:block;
+            border:1px solid #000;
+            width:400px; height:200px;
+        }
+        #btn1 {
+            /* gradient 사용 시 -color 없이 통합 background로 명령한다. */
+            background:linear-gradient(-90deg, #eee, #ff0, rgba(255,0,0,0.5));
+            background-size:400%;
+            transition:all 1s;
+        }
+        #btn1:hover {
+            background-position:100% 0;
+        }
+        h1 {
+            text-transform:uppercase;
+            font-size:2.5rem;
+            font-weight:800;
+            background:linear-gradient(90deg, purple, darkblue, #555, brown);
+            /* display:inline-block; */ /* inline-block은 내용만큼 / block은 화면만큼 */
+            width:max-content;
+            background-size:400%;
+            transition:all 1s;
+            /* gradient 색상을 글자에 적용하기 위한 방법(마스크구조) */
+            color:transparent; /* 글자색 투명 */
+            background-clip:text; /* 글자에 클립한다. -> 클리핑 마스크랑 비슷 */
+        }
+        h1:hover {background-position-x:100%;}
+        h2 {
+            font-size:1.8rem;
+            font-weight:800;
+            background:linear-gradient(90deg, #131845, #306260, #A257C7, #576B3A, #9C9024);
+            display:inline-block; /* or width:max-content; */
+            background-size:400%;
+            transition:all 2s;
+            color:transparent;
+            background-clip:text;
+        }
+        h2:hover {background-position-x:100%;}
+    </style>
+</head>
+<body>
+    <button type="button" id="btn1" class="btn">Hover me!</button>
+    <h1>HTML & CSS & JAVAscript & figma & react</h1>
+    <h2>기존css 속성 중 어느 속성에게 효과를 부여할지, 지속시간, 속도, 딜레이 시간 등을 설정하며<br> css 상대선택자(:hover), 자바스크립트 타이머함수, 이벤트와 함께 많이 활용</h2>
+</body>
+</html>

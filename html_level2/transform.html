@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform | css</title>
+    <link rel="stylesheet" href="../css_basic/styles/reset.css">
+    <style>
+        .parent {
+            background-color:#eee; padding:30px;
+        }
+        .parent .child {
+            width:100px; height:100px;
+            border:1px solid #000;
+        }
+        .parent .child1 {
+            background-color:aqua;
+            transition:background-color 2s; /* 마우스를 올렸을 때 내렸을 때 모두 적용하게 하려면 hover가 아닌 그 자체에 작성한다. */
+            /* hover에 적용하면 마우스를 올렸을 때만 적용된다. */
+        }
+        .parent .child1:hover {
+            background-color:lime;
+            /* transition:애니메이션적용속성 지속시간; */
+        }
+        .parent .child2 {
+            transition:width 0.5s, height 1s; /* , 넣어서 구분해서 작성 */
+        }
+        .parent .child2:hover {
+            width:150px; height:200px; 
+        }
+        .parent .child3 {
+            transition:border 0.3s; /* 최종 변경되는 대상에 transition */
+        }
+        .parent:hover .child3 { 
+            border:5px solid #f00;
+        } 
+        .parent .child4 {
+            border-radius:50%;
+            position:relative; left:0; /* 시작위치 */
+            transition:left 0.7s ease-out 1s; /* 변하는거 기준 -> position이 아니라 left를 작성해야함 */
+        }
+        .parent:hover .child4 {
+            left:300px; /* 움직임동작은 부모에 hover를 적용해서 마우스를 부모에만 올려도 작동되게 하는것이 좋다 */
+        }
+        .parent .child5 {
+            transition:width 1s, background-color 3s, color 0.5s, font-size 3s;
+        }
+        .parent .child5:hover {
+            width:200px; background-color:#000;
+            color:#fff;
+            font-size:2rem;
+        }
+        .parent .child6 {
+            width:400px; height:600px;
+            background-image:url(https://kr.pinterest.com/pin/6685099441131821/); /* 항상 상대경로로 작성 */
+            background-size:100%; /* 애니메이션으로 사이즈를 줄때는 무조건 수치로 작성 -> cover, contain은 작성 X */
+            background-position:center;
+            /* transition:background-position 0.5s, background-size 1s; */
+            transition:all 1s; /* 값을 다 똑같이 */
+        }
+        .parent .child6:hover {
+            background-image:url(https://kr.pinterest.com/pin/70437489810352/);
+            /* background-position:100px 0; */
+            background-size:110%; /* 상대처리 */
+        }
+        .parent .child7 {
+            width:800px; height:239px;
+            background-image:url(./image/bg.jpg);
+            background-position:0 0;
+            background-size:cover;
+            background-repeat:repeat-x; /* 원하는 방향으로 반복 */
+            transition:all 20s linear;
+        }
+        .parent .child7:hover {
+            background-position:-3000px 0;
+        }
+        /* background이용한 애나메이션 알아두기 */
+    </style>
+</head>
+<body>
+    <h1>transition</h1>
+    <p>기존 css속성이 사용자의 동작에 의해서 변경될 때 애니메이션 효과를 주는 속성</p>
+    <div class="parent">
+        <div class="child child1"></div>
+        <div class="child child2"></div>
+        <div class="child child3"></div>
+        <div class="child child4"></div>
+        <div class="child child5">초코우유</div>
+        <div class="child child6"></div>
+        <div class="child child7"></div>
+    </div>
+</body>
+</html>
