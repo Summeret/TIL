@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d transform | css</title>
+    <link rel="stylesheet" href="../css_basic/styles/reset.css">
+    <style>
+        main {
+            /* width:100%; */
+            height:100vh;
+            background:linear-gradient(45deg, #fff, #eee, #bbb, #aaa);
+        }
+        main .card_container {
+            perspective:1000px; /* 부모 원근감 깊이 설정 -> 3d 조건 */
+        }
+        main .card_container .card {
+            position:relative;
+            display:block; /* 크기인식 속성 변경 */
+            width:640px; height:415px; /* absolute는 float처럼 부유하는 특징이 있기 때문에 부모에 크기설정을 해줘야 a가 인식된다. */
+            transform:scale(0.5); /* 카드 크기조절 */
+            transform-style:preserve-3d; /* 3d영역 선언 */
+            transition:all 0.3s; /* 카드 뒤집는 애니메이션 */
+        }
+        main .card_container .card:hover {
+            transform:rotateY(180deg) scale(0.5); /* (마우스올렸을 시) 카드뒤집기 */
+        }
+        main .card_container .card > * { /* 앞면 뒷면 선택자 */
+            position:absolute; left:0; top:0; /* 앞,뒷면 카드 겹치기 -> 디자인으로 겹쳐진 상태일때는 생략*/
+            /* 이면가시성 css */ /* 카드 앞뒷면 모두 뒤집는면 숨기기 */
+            backface-visibility:hidden;
+        }
+        main .card_container .card .front {}
+        main .card_container .card .front img {}
+        main .card_container .card .back {
+            transform:rotateY(180deg); /* 뒷면 카드 뒤집기 */
+        }
+        main .card_container .card .back img {}
+    </style>
+</head>
+<body>
+    <main>
+        <div class="card_container">
+            <a href="#" class="card">
+                <div class="front"><img src="./image/card_front.png" alt=""></div>
+                <div class="back"><img src="./image/card_back.png" alt=""></div>
+            </a>
+        </div>
+    </main>
+</body>
+</html>

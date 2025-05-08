@@ -566,3 +566,12 @@
 * `linear` 처음부터 끝까지 일정한 속도로
 * `ease-in` 천천히 시작해서 점점 빠르네
 * `ease-out` 빠르게 시작해서 점점 느리게
+----
+### 25/05.08
+### 3d 작성
+* 3d주려는 대상들을 다 가지고 있는 제일 가까운 부모에 원근감 깊이주기 `perspective:1000px;`
+* 앞,뒷면 모두 숨기기 기능 넣어주기 
+ 1. 모든 자식 선택자 만들어서 `main #box_office ul li .poster >* {backface-visibility:hidden}`
+ 2. 각자 넣어주기 `backface-visibility:hidden`
+* 앞,뒷면 포함하는 부모에 `display;block;` `trnasform-style:perserve-3d` `transition:all 0.3s;`
+* 카드들 `transform:rotateY(180deg)`적용해서 뒤집어주기
