@@ -22,7 +22,7 @@
         }
         main #box_office ul li .poster >* {
             /* position:absolute; left:0; top:0; */ /* 앞,뒷면 카드 겹치기 -> 디자인으로 겹쳐진 상태일때는 생략*/
-            backface-visibility:hidden /* 뒤집혔을 때 서로 안보여야하니 모든 자식으로 선택자를 만들어서 둘다 숨기기 적용해준다. -> 각자 적용해도 가능 */
+            backface-visibility:hidden; /* 뒤집혔을 때 서로 안보여야하니 모든 자식으로 선택자를 만들어서 둘다 숨기기 적용해준다. -> 각자 적용해도 가능 */
         }
         main #box_office ul li .poster {
             position:relative; /* (back)absolute의 위치 부모기준 */

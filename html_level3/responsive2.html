@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형웹2 | css</title>
+    <link rel="stylesheet" href="../css_basic/styles/reset.css">
+    <style>
+        main {
+            width:100%; /* 기본값이기때문에 생략 가능 */
+            /* max-width:1920px; */
+            min-width:320px; /* 최소를 설정하고 media에서 이하로 막아서 설정한다 */
+            border:5px solid #000;
+            height:100vh;
+        }
+        main ul {
+            display:flex; flex-flow:row wrap;
+            gap:6px;
+        }
+        main ul li {
+            width:calc((100% - (6px * 3)) / 4);
+            height:250px;
+        }
+        main ul li:nth-child(odd) {background-color:aqua}
+        main ul li:nth-child(even) {background-color:yellow}
+        /* ================= */
+        @media screen and (max-width:1199px) {
+            main {
+                /* min-width:720px; */
+                border:5px solid red;
+            }
+            main ul li {
+                width:calc((100% - (6px * 2)) / 3);
+            }
+        } /* 720~1199 */
+        @media screen and (max-width:719px) {
+            main {
+                /* min-width:320px; */
+                border:5px solid blue;
+            }
+            main ul li {
+                width:calc((100% - 6px) / 2)
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 공통여백(gap) 6px -->
+    <!-- desktop : 1200~1920 (4열) -->
+    <!-- tablet : 720~1199 (3열) -->
+    <!-- mobile : 320~719 (2열) -->
+    <main>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </main>
+</body>
+</html>
