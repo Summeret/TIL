@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid | css</title>
+    <link rel="stylesheet" href="../css_basic/styles/reset.css">
+    <style>
+        .container {
+            border:5px solid #000;
+            padding:20px;
+            display:grid; /* 정렬대상 item의 부모한테 명령(flex와 동일) */
+            /* 1행 기준 item 크기 설정과 방향 속성 */
+            /* grid-template-rows:50px 100px 50px 100px; */ /* 요소의 크기보다 크게 설정 or auto설정(내용만큼) / 자식 개수 만큼 작성 */
+            /* 1열 기준 item 크기 설정과 방향 속성 */
+            /* grid-template-columns:repeat(3, 1fr); */ /* grid에 같은 값을 여러번 작성할 경우 grid안에 repeat() -> repeat함수 */  /* 같은 열 방향이면 같은 값이 적용 */
+            /* grid-template-rows:100px 150px; */
+            grid-template-areas:
+                'title title'
+                'poster poster'  /* 이름을 연속하면 연장개념 처리(하나만 작성해줄때 열이 갑자기 바뀌면서 생기는 에러 해결) -> 열과 행 개서 맞춰주기 */  
+                'details reservation';  /* 이 이름을 가진 애들을 옆으로 나열하겠다. 밑으로 내리고 싶으면 밑에 작성 */
+            grid-template-rows:50px 300px 40px;
+            width:350px;
+            margin-bottom:10px;
+        }
+        .container .item {}
+        /* 각 영역에 grid 레이아웃을 위한 이름 선정 */
+        .container .item:nth-child(1) {grid-area:title;}
+        .container .item:nth-child(2) {grid-area:poster;}
+        .container .item:nth-child(3) {grid-area:details;}
+        .container .item:nth-child(4) {grid-area:reservation;}
+        .container .item:nth-child(odd) {background-color:aqua;}
+        .container .item:nth-child(even) {background-color:pink;}
+        /* 헤택 메가박스 만들기 */
+        .container2 {
+            border:5px solid #000;
+            padding:20px;
+            display:grid;
+            grid-template-areas:
+                'title title'
+                'bnr1 bnr2'
+                'bnr3 bnr2';
+            grid-template-rows:50px 200px 150px; /* 행 기준으로 작성 */
+            grid-template-columns:55% 45%;
+            width:600px;
+        }
+        .container2 .item {border:2px solid #000;}
+        .container2 .item:nth-child(1) {grid-area:title;}
+        .container2 .item:nth-child(2) {grid-area:bnr1}
+        .container2 .item:nth-child(3) {grid-area:bnr2}
+        .container2 .item:nth-child(4) {grid-area:bnr3}
+        .container2 .item:nth-child(odd) {background-color:orange;}
+        .container2 .item:nth-child(even) {background-color:lime;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+    <div class="container2">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+</body>
+</html>
