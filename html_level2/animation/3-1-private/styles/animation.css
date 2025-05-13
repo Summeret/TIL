@@ -1,0 +1,9 @@
+/* =============================== */
+@keyframes bg {
+    0% {background-position-x:0;}
+    100% {background-position-x:1000px;}
+}
+@keyframes tire {
+    from {transform:rotate(0);}
+    to {transform:rotate(360deg);}
+}

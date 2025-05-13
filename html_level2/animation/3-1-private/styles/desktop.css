@@ -29,6 +29,21 @@ main {
     top: 80px;
     text-align: center;
 }
+/* 좌우 끊긴 배경 자연스럽게 처리하기 */
+main::before {
+    content:''; display:block;
+    width:50%; height:100%;
+    position:absolute; left:0; top:0;
+    background:linear-gradient(90deg, rgb(9,13,43), transparent);
+    z-index:20;
+}
+main::after {
+    content:''; display:block;
+    width:50%; height:100%;
+    position:absolute; right:0; top:0;
+    background:linear-gradient(90deg, transparent, rgb(9,13,43));
+    z-index:20;
+}
 main > * {max-width:1400px; margin:0 auto;}
 /* 중첩순서 처리 배경(10) 그라디언트(20) 나머지(30) */
 main .bg_wrap {position:absolute; z-index:10;}
@@ -37,20 +52,20 @@ main .txt, main .car_list, main .car, main .scroll {
 }
 /* 메인배경 */
 main .bg_wrap .bg {width:1400px; margin:0 auto;}
-main .bg_wrap .bg1 {
+main .bg_wrap .bg1 { /* 구름 */
     height:100px; 
     background:url(../images/bg_cloud.png) repeat-x;
-    animation:move 30s linear infinite;
+    animation:bg 50s linear infinite;
 }
 main .bg_wrap .bg2 {
     height:200px; 
     background:url(../images/bg_city1.png) repeat-x;
-    animation:move 30s linear reverse infinite;
+    animation:bg 30s linear infinite;
 }
 main .bg_wrap .bg3 {
     height:100px; position:relative; top:-96px;
     background:url(../images/bg_city2.png) repeat-x;
-    animation:move 20s linear infinite;
+    animation:bg 10s linear infinite;
 }
 /* 메인제목 */
 main .txt {}
@@ -58,18 +73,9 @@ main .txt {}
 /* 메인 자동차 */
 main .car {margin-top:150px; text-align:center; width:600px;}
 main .car #car {width:100%; }
-main .car #left_tire, main .car #right_tire {
-    position:absolute; bottom:25px; width:67px;
-    animation:rotate 2s linear infinite;
+main .car #left_tire, main .car #right_tire { /* 포토샵으로 바퀴를 따로 만들어줘야 위치를 선정해서 애니메이션 효과 적용 */
+    position:absolute; bottom:25px; width:67px; /* main에 position:relative */
+    animation:tire 2s linear reverse infinite;
 }
 main .car #left_tire {left:102px;}
-main .car #right_tire {right:91px;}
-/* =============================== */
-@keyframes rotate {
-    from {transform:rotate(0);}
-    to {transform:rotate(360deg);}
-}
-@keyframes move {
-    0% {background-position: 0 0;}
-    100% {background-position: 1000px 0;}
-}
+main .car #right_tire {right:91px;} /* 가까운 방향으로 좌표쓰기 */
