@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="reset.css">
     <style>
         body {background:#000;}
-        body * {border:1px solid aqua;}
+        /* body * {border:1px solid aqua;} */
         header {
             padding:20px 0; width:1400px; margin:0 auto;
             display:flex; justify-content:space-between; align-items:center;
@@ -31,7 +31,7 @@
         }
         main .video_bg video {
             position:absolute;
-            left:200px; bottom:200px; z-index:10;
+            left:-200px; bottom:-100px; z-index:10;
         }
         main .video_bg img {
             position:absolute; 
@@ -42,11 +42,11 @@
             background:url(images/bg_flow.png) repeat-x left top;
             height:150px; width:100%;
             position:absolute; z-index:30;
-            animation:txt 30s linear infinite;
+            animation:txt 25s linear infinite;     /* transition : 마우스동작 / animation : 자동재생 */
         }
         @keyframes txt {
             0% {background-position-x:0;}
-            100% {background-position-x:1000px;}
+            100% {background-position-x:1000px;} /* background-image -> background-position / img -> trnasform */
         }
     </style>
 </head>
@@ -58,7 +58,7 @@
     <main>
         <div class="center">
             <div class="video_bg">
-                <video src="https://cdn.pixabay.com/video/2023/10/15/185096-874643413_tiny.mp4" autoplay muted loop></video>
+                <video src="./video/golden.mp4" autoplay muted loop></video> <!-- video 속성 다시 확인하기 -->
                 <img src="images/img_intro.png" alt="">
             </div>
             <div class="txt_bg_ani"></div>
