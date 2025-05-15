@@ -9,7 +9,7 @@
     <style>
         #wrap {
             width:100%; /* height:100vh; */
-            background:url(images/bmw_bg.jpg) no-repeat center / cover;
+            background:url(images/bmw_bg.jpg) no-repeat center 45% / cover; 
             position:relative;
         }
         header {
@@ -21,25 +21,27 @@
             border-bottom:1px solid rgba(255,255,255,0.2);
             width:80%; margin:0 auto; display:flex; justify-content:space-around;
         }
-        header nav a {padding:10px 0; position:relative;}
+        header nav a {padding:10px 0; position:relative; color:#fff;}
         header nav a::after {
             content:''; display:block;
             width:100%; height:1px; background:#cae4ff;
-            position:absolute; bottom:-1px;
-            left: 50%;
-            transform:translateX(-50%) scaleX(0); /* left:50% -> a(부모)의 왼쪽에서 50%위치를 기준으로 잡고 translateX(-50%)->그 위치에서 다시 왼쪽으로 50%가는것 = 가운데에서 왼쪽으로 가는 애니메이션 */
-            transform-origin: center;
-            transition:transform 0.4s ease;
+            position:absolute; bottom:-1px; /* 두 개의 선을 완전히 겹치게 */
+            transform:scaleX(0);  /* 길어지는 애니메이션 연장개념으로 display:none;이 아닌 scale0으로 설정 */
+            /* 애니메이션(transform) 중심방향을 바꾸는 속성 transform-origin */
+            transform-origin:right;
+            /* 변경되는 속성에 대한 애니메이션 속성 transition */
+            transition:transform 0.4s;
         }
-        header nav a:hover::after {
-            transform:translateX(-50%) scaleX(1);
+        /* after는 위에서 x0 설정으로 선택이 안되기 때문에 부모 a에 마우스올렸을때 after를 제어한다는 상대선택자를 만들어야한다. */
+        header nav a:hover::after { /* 가상선택자는 띄어쓰기 금지 */
+            transform:scaleX(1);
         }
         main {position:relative; width:1400px; height:80vh; margin:0 auto;}
         main img {
             position:absolute; left:0; bottom:100px;
-            animation:img 2s linear both;
+            animation:sub_title 3s;
         }
-        @keyframes img {
+        @keyframes sub_title {
             0% {opacity:0;}
             100% {opacity:1;}
         }
