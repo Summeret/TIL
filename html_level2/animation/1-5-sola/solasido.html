@@ -27,7 +27,7 @@
         .slide_wrap .slide_c .slide1 {
             background-image:url(images/bg1.jpg); 
             opacity:1;
-            animation:bg 5s both;
+            animation:bg 6s both;
         }
         .slide_wrap .slide_c .slide2 {background-image:url(images/bg2.jpg);}
         .slide_wrap .slide_c .slide3 {background-image:url(images/bg3.jpg);}
@@ -43,12 +43,12 @@
 
         /* animation */
         @keyframes sola {
-            from {transform:translateY(0);}
-            to {transform:translateY(-30px); opacity:1;}
+            0% {transform:translateY(40px) scale(0.8); opacity:0;}
+            100% {transform:translateY(0) scale(1); opacity:1;}
         }
         @keyframes bg {
-            0% {transform:scale(1);}
-            100% {transform:scale(1.2);}
+            0% {background-size:100%; /* transform:scale(1); */}
+            100% {background-size:120%; /* transform:scale(1.2); */}
         }
     </style>
     <script>
